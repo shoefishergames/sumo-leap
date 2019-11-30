@@ -1,0 +1,733 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Camera.gd" type="Script" id=2]
+[ext_resource path="res://sounds/321go.wav" type="AudioStream" id=3]
+[ext_resource path="res://scripts/PlayerSumo.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Sumo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://textures/power.png" type="Texture" id=6]
+[ext_resource path="res://scripts/NpcSumo.gd" type="Script" id=7]
+[ext_resource path="res://textures/Sand _1.jpg" type="Texture" id=8]
+[ext_resource path="res://textures/beach_sand.png" type="Texture" id=9]
+[ext_resource path="res://textures/wood 2.jpg" type="Texture" id=10]
+[ext_resource path="res://materials/rice straw.tres" type="Material" id=11]
+[ext_resource path="res://materials/white lines.tres" type="Material" id=12]
+[ext_resource path="res://materials/panel.tres" type="Material" id=13]
+[ext_resource path="res://textures/architecture-1578117_1280.jpg" type="Texture" id=14]
+[ext_resource path="res://textures/ceiling.png" type="Texture" id=15]
+[ext_resource path="res://materials/large_font.tres" type="DynamicFont" id=16]
+[ext_resource path="res://scenes/ProgressHud.tscn" type="PackedScene" id=17]
+
+[sub_resource type="Animation" id=1]
+length = 8.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 24.77, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0, -0.3, -0.052604, 0.27783, 0.0862272, -0.2463, -4.9, -0.25, 0, 0.25, 0, -0.19, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.00314822, 1.1, 1.4, 2.8, 3.9, 5, 7 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 8.27, -0.25, 0, 0.25, 0, 7.42, -0.25, 0, 0.25, 0, 7.42, -0.25, 0, 0.25, 0, 2.47, -0.25, 0, 0.25, 0, 2.89, -0.25, 0, 0.25, 0, 3.05, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.1, 1.4, 2.8, 3.9, 5, 7 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -5.58, -0.25, 0, 0.25, 0, 0.17, -0.0638754, -0.262054, 0.0749557, 0.23587, 6.46, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.1, 1.4, 2.8, 3.9, 5, 7 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:rotation_degrees:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -18.77, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0, -0.48, -0.13298, -0.673832, 0.217752, 0.0909394, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -90, -1.30061, 2.89489, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.1, 1.4, 2.8, 3.9, 5, 7 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:rotation_degrees:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 90, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0, 180, -0.176821, -12.2488, 0.217751, 17.0883, 270, -0.173479, -13.8357, 0.169945, 15.5014, 360, -0.235898, -1.9166, 0.25, 0, 360, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.1, 1.4, 2.8, 3.9, 5, 7 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:rotation_degrees:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.1, 1.4, 2.8, 3.9, 5, 7 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Countdown:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4, 5, 6, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "3", "2", "1", "GO", "" ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Start")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 3.9 )
+}
+
+[sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="CapsuleShape" id=3]
+
+[sub_resource type="CylinderShape" id=4]
+
+[sub_resource type="CylinderMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 8 )
+uv1_scale = Vector3( 10, 20, 1 )
+
+[sub_resource type="BoxShape" id=7]
+
+[sub_resource type="CubeMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 9 )
+uv1_scale = Vector3( 5, 10, 1 )
+
+[sub_resource type="BoxShape" id=10]
+
+[sub_resource type="CubeMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 10 )
+uv1_scale = Vector3( 10, 10, 1 )
+
+[sub_resource type="CylinderShape" id=13]
+
+[sub_resource type="CylinderMesh" id=14]
+
+[sub_resource type="BoxShape" id=15]
+
+[sub_resource type="CubeMesh" id=16]
+
+[sub_resource type="QuadMesh" id=17]
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_texture = ExtResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = ExtResource( 15 )
+uv1_scale = Vector3( 15, 1, 1 )
+
+[sub_resource type="CylinderShape" id=20]
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.16616, 0, -0.986099, 0, 1, 0, 0.986099, 0, 0.16616, -4.72468, 2.89596, 0.784323 )
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera"]
+autoplay = "Intro"
+anims/Intro = SubResource( 1 )
+
+[node name="Player1" type="KinematicBody" parent="."]
+editor/display_folded = true
+transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, -0.128, 2.754, 2.846 )
+script = ExtResource( 4 )
+
+[node name="Sumo" parent="Player1" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+
+[node name="LeapIntensity" type="ColorRect" parent="Player1/Sumo"]
+visible = false
+margin_right = 100.0
+margin_bottom = 15.0
+
+[node name="Amount" type="ColorRect" parent="Player1/Sumo/LeapIntensity"]
+margin_right = 100.0
+margin_bottom = 15.0
+color = Color( 0.737255, 0.545098, 0.27451, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Player1/Sumo/LeapIntensity"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Player1"]
+transform = Transform( 0.15, 0, 0, 0, 1.11, 0, 0, 0, 0.15, 0, -0.2, -0.389 )
+shape = SubResource( 2 )
+
+[node name="Player2" type="KinematicBody" parent="."]
+editor/display_folded = true
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.101, 2.731, -2.958 )
+script = ExtResource( 7 )
+
+[node name="Sumo" parent="Player2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="LeapIntensity" type="ColorRect" parent="Player2/Sumo"]
+visible = false
+margin_right = 100.0
+margin_bottom = 15.0
+
+[node name="Amount" type="ColorRect" parent="Player2/Sumo/LeapIntensity"]
+margin_right = 100.0
+margin_bottom = 15.0
+color = Color( 0.737255, 0.545098, 0.27451, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Player2/Sumo/LeapIntensity"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Player2"]
+transform = Transform( 0.5, 0, 0, 0, 3.7, 0, 0, 0, 0.5, 0, -0.2, -0.389 )
+shape = SubResource( 3 )
+
+[node name="Ring" type="StaticBody" parent="."]
+editor/display_folded = true
+transform = Transform( 4.55, 0, 0, 0, 1, 0, 0, 0, 4.55, 0, 1.01, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ring"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ring"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+use_in_baked_light = true
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Clay" type="StaticBody" parent="."]
+editor/display_folded = true
+transform = Transform( 6.77, 0, 0, 0, 1, 0, 0, 0, 6.77, 0, 0.5, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Clay"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Clay"]
+use_in_baked_light = true
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Floor" type="StaticBody" parent="."]
+editor/display_folded = true
+transform = Transform( 22, 0, 0, 0, 1, 0, 0, 0, 15, 7, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0178019, 0.00806904, -0.023873 )
+use_in_baked_light = true
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="Rice straw bales" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="StaticBody" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.2, 0, 0, 0, -2.84124e-008, -0.2, 0, 0.65, -8.74228e-009, 4.95705, 1.49244, -0.149039 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody7" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.2, 0, 0, 0, -2.84124e-008, -0.2, 0, 0.65, -8.74228e-009, -4.91785, 1.49244, -0.335338 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody7"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody7"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody8" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.190211, 0.200861, -2.70151e-009, 0, -2.84124e-008, -0.2, -0.0618034, -0.618187, 8.3144e-009, -4.22674, 1.49244, -1.57332 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody8"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody8"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody9" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.161803, 0.38206, -5.13858e-009, 0, -2.84124e-008, -0.2, -0.117557, -0.525861, 7.07265e-009, -3.54437, 1.49244, -2.79779 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody9"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody9"]
+transform = Transform( 1, 2.38419e-007, -5.32907e-015, 2.98023e-008, 1, -1.77636e-015, 0, -1.42109e-014, 1, 0, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody10" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.117557, 0.525861, -7.07265e-009, 0, -2.84124e-008, -0.2, -0.161803, -0.38206, 5.13858e-009, -2.43717, 1.49244, -3.72382 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody10"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody10"]
+transform = Transform( 1, -3.57628e-007, 1.24345e-014, 1.49012e-008, 1, 1.33227e-015, 0, -1.42109e-014, 1, 0.288671, -0.0352485, 0 )
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody11" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.0618034, 0.618187, -8.3144e-009, 0, -2.84124e-008, -0.2, -0.190211, -0.200861, 2.70151e-009, -1.20075, 1.49244, -4.38266 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody11"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody11"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody2" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.00631693, -0.649676, 8.73792e-009, 0, -2.84124e-008, -0.2, 0.1999, -0.02053, 2.76122e-010, 0.119287, 1.56272, -4.91824 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody2"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody2"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody12" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.00631693, -0.649676, 8.73792e-009, 0, -2.84124e-008, -0.2, 0.1999, -0.02053, 2.76122e-010, 0.069335, 1.56272, 4.93775 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody12"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody12"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody17" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.0618034, -0.618187, 8.3144e-009, 0, -2.84124e-008, -0.2, 0.190211, -0.200861, 2.70151e-009, -1.30499, 1.56272, 4.33306 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody17"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody17"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody18" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.117557, -0.525861, 7.07265e-009, 0, -2.84124e-008, -0.2, 0.161803, -0.382061, 5.13858e-009, -2.63199, 1.56272, 3.67165 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody18"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody18"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody19" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.161803, -0.38206, 5.13858e-009, 0, -2.84124e-008, -0.2, 0.117557, -0.525861, 7.07265e-009, -3.76193, 1.56272, 2.50445 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody19"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody19"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody20" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( -0.190211, -0.200861, 2.70151e-009, 0, -2.84124e-008, -0.2, 0.0618034, -0.618187, 8.3144e-009, -4.38831, 1.56272, 1.1046 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody20"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody20"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody13" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.0618034, -0.618187, 8.3144e-009, 0, -2.84124e-008, -0.2, 0.190211, 0.200861, -2.70151e-009, 1.4132, 1.56272, 4.36415 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody13"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody13"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody14" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.117557, -0.525861, 7.07265e-009, 0, -2.84124e-008, -0.2, 0.161803, 0.38206, -5.13858e-009, 2.75697, 1.56272, 3.63568 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody14"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody14"]
+transform = Transform( 1, 1.49012e-008, -4.44089e-016, 0, 1, 4.64906e-016, 2.22045e-016, 1.93873e-014, 1, 0, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody15" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.161803, -0.38206, 5.13858e-009, 0, -2.84124e-008, -0.2, 0.117557, 0.525861, -7.07265e-009, 3.74673, 1.56272, 2.51598 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody15"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody15"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody16" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.190211, -0.200861, 2.70151e-009, 0, -2.84124e-008, -0.2, 0.0618034, 0.618187, -8.3144e-009, 4.40026, 1.56272, 1.19884 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody16"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody16"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody3" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.0618034, 0.618187, -8.3144e-009, 0, -2.84124e-008, -0.2, -0.190211, 0.200861, -2.70151e-009, 1.42324, 1.56272, -4.2832 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody3"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody3"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody4" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.117557, 0.525861, -7.07265e-009, 0, -2.84124e-008, -0.2, -0.161803, 0.38206, -5.13858e-009, 2.68354, 1.56272, -3.61816 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody4"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody4"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody5" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.161803, 0.38206, -5.13858e-009, 0, -2.84124e-008, -0.2, -0.117557, 0.525861, -7.07265e-009, 3.68656, 1.56272, -2.61994 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody5"]
+transform = Transform( 1, 1.19209e-007, -1.77636e-015, 0, 1, -1.77636e-015, -1.77636e-015, 0, 1, 0, 0, 0 )
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody5"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="StaticBody6" type="StaticBody" parent="Rice straw bales"]
+transform = Transform( 0.190211, 0.200861, -2.70151e-009, 0, -2.84124e-008, -0.2, -0.0618034, 0.618187, -8.3144e-009, 4.32913, 1.56272, -1.3572 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rice straw bales/StaticBody6"]
+shape = SubResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Rice straw bales/StaticBody6"]
+use_in_baked_light = true
+mesh = SubResource( 14 )
+material/0 = ExtResource( 11 )
+
+[node name="White lines" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="StaticBody" type="StaticBody" parent="White lines"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -0.11361, 0.52, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="White lines/StaticBody"]
+shape = SubResource( 15 )
+
+[node name="MeshInstance" type="MeshInstance" parent="White lines/StaticBody"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.65, -0.489234, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 12 )
+
+[node name="StaticBody2" type="StaticBody" parent="White lines"]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -0.106287, 0.52, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="White lines/StaticBody2"]
+shape = SubResource( 15 )
+
+[node name="MeshInstance" type="MeshInstance" parent="White lines/StaticBody2"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.65, -0.489234, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 12 )
+
+[node name="Walls" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, 2.23037, 7.56474, 14.5 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, 7.23037, 7.56474, 14.5 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, 12.2304, 7.56474, 14.5 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance23" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, 16.7693, 7.56474, 4.47952 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance24" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, 21.769, 7.56474, 4.48 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance25" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, 26.769, 7.56474, 4.48 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance26" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, 16.7976, 7.56474, -5.53877 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance27" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, 21.798, 7.56474, -5.539 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="Outside" type="MeshInstance" parent="Walls"]
+transform = Transform( -1.67852e-006, 0, -1, 0, 21.6, 0, 38.4, 0, -4.37114e-008, 38.7043, 8.82607, 2.29982 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = SubResource( 18 )
+
+[node name="MeshInstance28" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, 26.798, 7.56474, -5.539 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, -2.76963, 7.56474, 14.5 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, -7.76963, 7.56474, 14.5 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="Walls"]
+transform = Transform( -5, 0, -1.50996e-007, 0, 13, 0, 7.54979e-007, 0, -1, -12.77, 7.56474, 14.5 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, 1, 0, 13, 0, -5, 0, -4.37114e-008, -15.22, 7.56474, 6.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, 1, 0, 13, 0, -5, 0, -4.37114e-008, -15.22, 7.56474, 1.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, 1, 0, 13, 0, -5, 0, -4.37114e-008, -15.22, 7.56474, -2.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, 1, 0, 13, 0, -5, 0, -4.37114e-008, -15.22, 7.56474, -7.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance13" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, 1, 0, 13, 0, -5, 0, -4.37114e-008, -15.22, 7.56474, -12.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="Ceiling" type="MeshInstance" parent="Walls"]
+transform = Transform( 3.93402e-006, 42, -3.82137e-015, -1.31134e-006, 8.02488e-014, -1, -30, 5.50763e-006, 4.37114e-008, 5.912, 14.02, -0.105 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = SubResource( 19 )
+
+[node name="MeshInstance19" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, -1, 0, 13, 0, 5, 0, -4.37114e-008, 14.3265, 7.56474, -13.0398 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance20" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, -1, 0, 13, 0, 5, 0, -4.37114e-008, 14.326, 7.56474, -8.03976 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance21" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, -1, 0, 13, 0, 5, 0, -4.37114e-008, 14.326, 7.56474, 6.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance22" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, -1, 0, 13, 0, 5, 0, -4.37114e-008, 14.326, 7.56474, 11.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="Walls"]
+transform = Transform( -2.18557e-007, 0, 1, 0, 13, 0, -5, 0, -4.37114e-008, -15.22, 7.56474, 11.97 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, -12.77, 7.56474, -15.282 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance14" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, -7.77, 7.56474, -15.282 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance15" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, -2.77, 7.56474, -15.282 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance16" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, 1.77, 7.56474, -15.282 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance17" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, 6.77, 7.56474, -15.282 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="MeshInstance18" type="MeshInstance" parent="Walls"]
+transform = Transform( 5, 0, 0, 0, 13, 0, 0, 0, 1, 11.77, 7.56474, -15.282 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = ExtResource( 13 )
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.26198, 0 )
+visible = false
+bake_extents = Vector3( 14.9852, 9.97413, 16.8763 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.0179126, -0.313995, 0.949256, -0.00592409, 0.949425, 0.31394, -0.999822, 0, -0.0188668, 35.9401, 14.3293, 0 )
+visible = false
+shadow_enabled = true
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 20 )
+
+[node name="Countdown" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 16 )
+align = 1
+valign = 1
+
+[node name="Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+alignment = 1
+
+[node name="ProgressHud" parent="HBoxContainer" instance=ExtResource( 17 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_right = 512.0
+margin_bottom = 597.0
